@@ -16,7 +16,7 @@ export default class Notification {
     this.container.classList.add("notification-container");
   }
 
-  render(type, price) {
+  render({type, price}) {
     const template = `
 <div class="notification ${type} type-${type} ${classNames({
       "is-danger": type === Notification.types.HAWAIIAN,

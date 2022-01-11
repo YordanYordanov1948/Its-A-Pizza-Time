@@ -29,9 +29,8 @@ export default class Application extends EventEmitter {
 
     pizzas.forEach((pizza) => {
       const card = new Card({ ...pizza });
-      const type = pizza.type;
-      const price = pizza.price;
-      card.render(type, price);
+
+      card.render();
 
       document.querySelector(".main").appendChild(card.container);
     });
@@ -43,7 +42,7 @@ export default class Application extends EventEmitter {
       const type = pizzas[i].type;
       const price = pizzas[i].price;
       console.log(pizzas[i]);
-      notification.render(type, price);
+      notification.render({type, price});
       elements[i].addEventListener("click", function () {
         document.querySelector(".notifications").appendChild(notification.container);
       });
