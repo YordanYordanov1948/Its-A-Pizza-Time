@@ -26,7 +26,7 @@ export default class Card extends EventEmitter {
     this.container.classList.add("card-container");
   }
 
-  render() {
+  render(type, price) {
     const template = `
 <div class="card type-${this._type} ${classNames({
       "is-danger": this._type === Card.types.HAWAIIAN,
